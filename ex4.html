@@ -1,0 +1,53 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ceci est le titre de la page</title>
+    <script>
+    function f1() {
+        //A
+        var pays = document.getElementById("pays").value;
+
+        //B
+        var capitale = document.getElementById("capitale").value;
+
+        //C
+        var tableau = document.querySelector("table");
+
+        //D
+        var ligne = document.createElement("tr");
+
+        //E H
+        var colPays = document.createElement("td");
+        colPays.innerText = pays.toUpperCase();
+
+        //F H
+        var colCapitale = document.createElement("td");
+        colCapitale.textContent = capitale.charAt(0).toUpperCase() + capitale.slice(1).toLowerCase();
+
+        //G 
+        ligne.appendChild(colPays);
+        ligne.appendChild(colCapitale);
+
+        //I
+        tableau.appendChild(ligne);
+
+    }
+    </script>
+</head>
+<body>
+    <h1>Capitales internationales</h1>
+    <table border="1">
+        <tr>
+            <th>Pays</th>
+            <th>Capitale</th>
+        </tr>
+    </table>
+    <div>Saisir le nom du pays
+        <input type="text" id="pays"/>
+    </div>
+    <div>Saisir sa capitale
+        <input type="text" id="capitale"/>
+    </div>
+    <button onclick="f1()"> Ajouter</button>
+</body>
+</html>
